@@ -13,13 +13,15 @@ O objetivo deste repositório é guardar os códigos utilizados durante o estudo
 ├── 📂 **datasets**  
 │   ├── 📄 sales_data.csv  
 ├── 📄 analise_de_vendas.py  
+├── 📄 visualizando_dados.py  
 ├── 📄 README.md  
 
 ### Descrição dos Arquivos
 
 - 📂 **datasets/**: Contém os arquivos de dados usados para a análise.  
   - 📄 `sales_data.csv`: Conjunto de dados de vendas.  
-- 📄 **analise_de_vendas.py**: Script principal para análise dos dados.  
+- 📄 **analise_de_vendas.py**: Script principal para análise dos dados.
+- 📄 **visualizando_dados.py**: Script de visualização dos dados em gráficos.  
 - 📄 **README.md**: Documentação do projeto. 
 
 
@@ -149,3 +151,44 @@ sum(). soma a quantidade de linhas que se repetem.
  0
 
 ```
+
+
+## Visualizando os Dados
+
+.plot() do pandas.DataFrame
+O método .plot() do pandas.DataFrame é uma funcionalidade poderosa e conveniente para criar visualizações gráficas diretamente a partir de um DataFrame. Ele é baseado na biblioteca matplotlib, mas oferece uma interface simplificada para gerar gráficos comuns, como linhas, barras, histogramas, dispersões, entre outros.
+
+Principais características
+Fácil de usar: Basta chamar .plot() em um DataFrame para criar um gráfico básico.
+
+Personalizável: Permite ajustar vários parâmetros, como tipo de gráfico, cores, rótulos, títulos, etc.
+
+Integração com matplotlib: Retorna um objeto Axes do matplotlib, permitindo personalizações adicionais usando a API do matplotlib.
+
+Tipos de gráficos suportados
+O parâmetro kind define o tipo de gráfico a ser criado. Os principais tipos são:
+
+* 'line': Gráfico de linhas (padrão).
+* 'bar': Gráfico de barras verticais.
+* 'barh': Gráfico de barras horizontais.
+* 'hist': Histograma.
+* 'box': Boxplot.
+* 'kde' ou 'density': Gráfico de densidade.
+* 'area': Gráfico de áreas.
+* 'scatter': Gráfico de dispersão.
+* 'pie': Gráfico de pizza.
+
+```bash
+
+# Exibe um gráfico de barras com a quantidade de vendas por região
+# Colorindo as barras de acordo com a regiao 
+data_frame['Region'].value_counts().plot(kind='bar', color=['blue', 'green', 'red', 'purple']) 
+plt.xlabel('Região')# Nomeia o eixo x
+plt.ylabel('Quantidade de vendas')# Nomeia o eixo y
+plt.title('Vendas por região')# Adiciona um título ao gráfico
+plt.show()# Exibe o gráfico
+
+
+```
+
+![](./img/img_venda_regiao.png)
