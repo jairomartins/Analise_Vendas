@@ -1,3 +1,4 @@
+# Importando as bibliotecas necessárias
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -6,9 +7,9 @@ import matplotlib.pyplot as plt
 data_frame = pd.read_csv('datasets/sales_data.csv')
 
 # Exibe as 5 primeiras linhas do data_frame
-data_frame.head()
+#data_frame.head()
 
-#print(data_frame.head())
+print(data_frame.head())
 
 # Product_ID   Sale_Date Sales_Rep Region  Sales_Amount  Quantity_Sold Product_Category  Unit_Cost  Unit_Price Customer_Type  Discount Payment_Method Sales_Channel Region_and_Sales_Rep
 # 0        1052  2023-02-03       Bob  North       5053.97             18        Furniture     152.75      267.22     Returning      0.09           Cash        Online            North-Bob
@@ -17,7 +18,29 @@ data_frame.head()
 # 3        1072  2023-08-24       Bob  South       2167.94             39         Clothing    4330.03     4467.75           New      0.02    Credit Card        Retail            South-Bob
 # 4        1061  2023-03-24   Charlie   East       3750.20             13      Electronics     637.37      692.71           New      0.08    Credit Card        Online         East-Charlie
 
-data_frame.info()  # Mostra informações sobre o data_frame
+#Obtento informações sobre o data_frame
+print(data_frame.info())
+
+# Data columns (total 14 columns):
+#  #   Column                Non-Null Count  Dtype  
+# ---  ------                --------------  -----  
+#  0   Product_ID            1000 non-null   int64  
+#  1   Sale_Date             1000 non-null   object 
+#  2   Sales_Rep             1000 non-null   object 
+#  3   Region                1000 non-null   object 
+#  4   Sales_Amount          1000 non-null   float64
+#  5   Quantity_Sold         1000 non-null   int64  
+#  6   Product_Category      1000 non-null   object 
+#  7   Unit_Cost             1000 non-null   float64
+#  8   Unit_Price            1000 non-null   float64
+#  9   Customer_Type         1000 non-null   object
+#  10  Discount              1000 non-null   float64
+#  11  Payment_Method        1000 non-null   object
+#  12  Sales_Channel         1000 non-null   object
+#  13  Region_and_Sales_Rep  1000 non-null   object
+# dtypes: float64(4), int64(2), object(8)
+# memory usage: 109.5+ KB
+
 
 
 print(data_frame.describe()) # Exibe informações estatísticas sobre o data_frame
@@ -26,44 +49,5 @@ print(data_frame.describe()) # Exibe informações estatísticas sobre o data_fr
 print(data_frame.isnull().sum()) 
 
 # Exibe se contem dados duplicados no data_frame
-data_frame.duplicated().sum()
+#data_frame.duplicated().sum()
 print(data_frame.duplicated().sum()) 
-
-#visualizando os dados
-
-# Exibe um gráfico de barras com a quantidade de vendas por região
-# Colorindo as barras de acordo com a regiao 
-data_frame['Region'].value_counts().plot(kind='bar', color=['blue', 'green', 'red', 'purple'])
-plt.xlabel('Região')
-plt.ylabel('Quantidade de vendas')
-plt.title('Vendas por região')
-# plt.show()
-
-
-# Exibe um gráfico de barras com a quantidade de vendas por categoria de produto
-
-data_frame['Product_Category'].value_counts().plot(kind='bar', color=['blue', 'green', 'red', 'purple'])
-plt.xlabel('Categoria de produto')
-plt.ylabel('Quantidade de vendas')
-plt.title('Vendas por categoria de produto')
-# plt.show()
-
-#usando groupby para agrupar dados
-
-# Agrupa os dados por região e calcula a média de vendas por região
-data_frame.groupby('Region')['Sales_Amount'].mean().plot(kind='bar', color=['blue', 'green', 'red', 'purple'])
-plt.xlabel('Região')
-plt.ylabel('Média de vendas')
-plt.title('Média de vendas por região')
-
-# 
-print(data_frame.groupby('Region')['Sales_Amount'].mean())
-
-# distribuicao por sales_amount
-plt.figure(figsize=(10,8))
-data_frame['Sales_Amount'].plot(kind='hist', bins=30, color='blue', edgecolor='black')
-
-plt.xlabel('Valor da venda')
-plt.ylabel('Quantidade de vendas')
-plt.title('Distribuição de vendas por valor')
-plt.show()
