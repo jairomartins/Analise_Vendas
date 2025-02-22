@@ -110,3 +110,42 @@ dtype: int64
 
 ```
 
+Gerar estatísticas descritivas. 
+
+Estatísticas descritivas incluem aquelas que resumem a tendência central, a dispersão e a forma da distribuição de um conjunto de dados, excluindo NaN.
+
+``` bash
+>>> print(data_frame.describe())
+
+Product_ID  Sales_Amount  Quantity_Sold    Unit_Cost   Unit_Price    Discount
+count  1000.000000   1000.000000    1000.000000  1000.000000  1000.000000  1000.00000
+mean   1050.128000   5019.265230      25.355000  2475.304550  2728.440120     0.15239
+std      29.573505   2846.790126      14.159006  1417.872546  1419.399839     0.08720
+min    1001.000000    100.120000       1.000000    60.280000   167.120000     0.00000
+25%    1024.000000   2550.297500      13.000000  1238.380000  1509.085000     0.08000
+50%    1051.000000   5019.300000      25.000000  2467.235000  2696.400000     0.15000
+75%    1075.000000   7507.445000      38.000000  3702.865000  3957.970000     0.23000
+max    1100.000000   9989.040000      49.000000  4995.300000  5442.150000     0.30000
+
+```
+
+O método describe() do pandas.DataFrame é uma função útil para obter estatísticas descritivas rápidas e resumidas sobre as colunas numéricas de um DataFrame. Ele retorna um novo DataFrame contendo informações como contagem, média, desvio padrão, valores mínimos e máximos, e os quartis (25%, 50% e 75%) para cada coluna numérica.
+
+* count: Número de valores não nulos em cada coluna.
+* mean: Média dos valores.
+* std: Desvio padrão, que mede a dispersão dos valores em torno da média.
+* min: Valor mínimo na coluna.
+* 25%: Primeiro quartil (25º percentil), ou seja, 25% dos dados estão abaixo desse valor.
+* 50%: Segundo quartil (50º percentil), também conhecido como mediana. Metade dos dados estão abaixo desse valor.
+* 75%: Terceiro quartil (75º percentil), ou seja, 75% dos dados estão abaixo desse valor.
+* max: Valor máximo na coluna.
+
+Verificando se existem dados duplicados:
+O método .duplicated() do pandas.DataFrame é usado para identificar linhas duplicadas em um DataFrame. Ele retorna uma Série booleana (ou seja, uma série de True ou False) indicando se cada linha é uma duplicata de uma linha anterior.
+sum(). soma a quantidade de linhas que se repetem.
+
+``` bash
+>>> print(data_frame.duplicated().sum())
+ 0
+
+```
