@@ -193,7 +193,7 @@ O parâmetro kind define o tipo de gráfico a ser criado. Os principais tipos s�
 
 ![](./img/img_venda_regiao.png)
 
-Para modificar o tipo de grafico de Barra para Pizaa basta alterar o parametro *kind* de *bar* para *pie*
+Para modificar o tipo de grafico de Barra para Pizza basta alterar o parametro *kind* de *bar* para *pie*
 
 ```bash
 
