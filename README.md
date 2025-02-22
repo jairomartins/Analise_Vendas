@@ -182,13 +182,26 @@ O parâmetro kind define o tipo de gráfico a ser criado. Os principais tipos s�
 
 # Exibe um gráfico de barras com a quantidade de vendas por região
 # Colorindo as barras de acordo com a regiao 
-data_frame['Region'].value_counts().plot(kind='bar', color=['blue', 'green', 'red', 'purple']) 
-plt.xlabel('Região')# Nomeia o eixo x
-plt.ylabel('Quantidade de vendas')# Nomeia o eixo y
-plt.title('Vendas por região')# Adiciona um título ao gráfico
-plt.show()# Exibe o gráfico
+>>> data_frame['Region'].value_counts().plot(kind='bar', color=['blue', 'green', 'red', 'purple']) 
+>>> plt.xlabel('Região')# Nomeia o eixo x
+>>> plt.ylabel('Quantidade de vendas')# Nomeia o eixo y
+>>> plt.title('Vendas por região')# Adiciona um título ao gráfico
+>>> plt.show()# Exibe o gráfico
 
 
 ```
 
 ![](./img/img_venda_regiao.png)
+
+Para modificar o tipo de grafico de Barra para Pizaa basta alterar o parametro *kind* de *bar* para *pie*
+
+```bash
+
+>>> data_frame['Region'].value_counts().plot(kind='pie', autopct='%1.1f%%', colors=['blue', 'green', 'red', 'purple'])
+>>> plt.axis('equal')
+>>> plt.title('Vendas por região')
+>>> plt.show()
+
+```
+
+![](./img/img_venda_regiao_pie.png)

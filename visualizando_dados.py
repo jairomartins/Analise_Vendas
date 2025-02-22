@@ -16,6 +16,12 @@ plt.ylabel('Quantidade de vendas')# Nomeia o eixo y
 plt.title('Vendas por região')# Adiciona um título ao gráfico
 plt.show()# Exibe o gráfico
 
+# Exibe um gráfico de pizza com a quantidade de vendas por região
+data_frame['Region'].value_counts().plot(kind='pie', autopct='%1.1f%%', colors=['blue', 'green', 'red', 'purple'])
+plt.axis('equal')
+plt.title('Vendas por região')
+plt.show()
+
 
 # Exibe um gráfico de barras com a quantidade de vendas por categoria de produto
 
