@@ -22,6 +22,16 @@ plt.axis('equal')
 plt.title('Vendas por região')
 plt.show()
 
+#importando a biblioteca seaborn
+# a biblioteca seaborn é uma biblioteca de visualização de dados baseada no matplotlib 
+# que fornece uma interface de alto nível para desenhar gráficos estatísticos atraentes e informativos.
+import seaborn as sns 
+plt.figure(figsize=(10,8))
+sns.histplot(data_frame['Sales_Amount'], bins=30, kde=True) # Exibe um gráfico de histograma com a distribuição de vendas
+plt.xlabel('Valor da venda')
+plt.ylabel('Quantidade de vendas')
+plt.show()
+
 
 # Exibe um gráfico de barras com a quantidade de vendas por categoria de produto
 

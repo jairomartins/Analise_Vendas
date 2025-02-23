@@ -205,3 +205,31 @@ Para modificar o tipo de grafico de Barra para Pizza basta alterar o parametro *
 ```
 
 ![](./img/img_venda_regiao_pie.png)
+
+
+Visualizando historiograma de vendas:
+*seaborn*: Biblioteca de visualização de dados construída sobre o matplotlib. Ela oferece gráficos mais atraentes e de alto nível. Aqui, é importada como sns.
+
+*plt.figure()*: Cria uma nova figura para o gráfico.
+*figsize=(10, 8)*: Define o tamanho da figura como 10 polegadas de largura e 8 polegadas de altura.
+
+*sns.histplot(df['Sales_Amount'], bins=30, kde=True)*
+*sns.histplot()*: Função do Seaborn para criar um histograma.
+*df['Sales_Amount']*: Coluna do DataFrame df que contém os dados a serem plotados. 
+*bins=30*: Define o número de intervalos (bins) no histograma. Neste caso, são 30 intervalos.
+*kde=True*: Adiciona uma curva de densidade (Kernel Density Estimate) ao histograma, que suaviza a distribuição dos dados.
+
+```bash
+#importando a biblioteca seaborn
+# a biblioteca seaborn é uma biblioteca de visualização de dados baseada no matplotlib 
+# que fornece uma interface de alto nível para desenhar gráficos estatísticos atraentes e informativos.
+import seaborn as sns 
+
+plt.figure(figsize=(10,8))
+sns.histplot(data_frame['Sales_Amount'], bins=30, kde=True)
+plt.show()
+
+
+```
+
+![](./img/img_distribuicao_vendas_hist.png)
